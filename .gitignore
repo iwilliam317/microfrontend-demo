@@ -1,0 +1,28 @@
+# Node modules
+**/node_modules/
+# Build output
+**/dist/
+**/build/
+# System files
+.DS_Store
+Thumbs.db
+# IDEs and text editors
+**/.idea/
+**/.vscode/
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+# npm and yarn cache
+.npm/
+.yarn/
+# Environment files
+**/.env
+**/.env.local
+**/.env.*.local
+# Generated files by Webpack
+**/bundle.js
+**/bundle.js.map
+# Temporary files
+*.swp
