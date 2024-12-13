@@ -1,5 +1,12 @@
 import React, { Suspense } from "react";
-const RemoteButton = React.lazy(() => import("remoteApp/Button"));
+// Attempt to import the remote component and catch errors.
+const RemoteButton = React.lazy(() =>
+  import("remoteApp/Button").catch(() => {
+    console.error("Failed to load remote component");
+    // Return a fallback component when the remote fails
+    return { default: () => <div>Error loading button.</div> };
+  })
+);
 const App = () => (
   <div>
     <h1>Host App</h1>
