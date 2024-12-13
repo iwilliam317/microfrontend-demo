@@ -1,6 +1,10 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { ModuleFederationPlugin } = require("webpack").container;
+const dotenv = require("dotenv")
+
+dotenv.config()
+
 module.exports = {
   entry: "./src/index.js",
   mode: "development",
@@ -19,7 +23,7 @@ module.exports = {
     new ModuleFederationPlugin({
       name: "host",
       remotes: {
-        remoteApp: "remoteApp@http://localhost:3001/remoteEntry.js",       },
+        remoteApp: `remoteApp@${process.env.REMOTE_APP_URL || "http://localhost:3001/remoteEntry.js"}`,       },
     }),
   ],
   module: {
