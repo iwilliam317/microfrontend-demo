@@ -26,3 +26,5 @@ yarn-error.log*
 **/bundle.js.map
 # Temporary files
 *.swp
+# Enviroment variables
+.env
